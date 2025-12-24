@@ -1,0 +1,11 @@
+public class PenumpangVIP extends Penumpang {
+
+    public PenumpangVIP(String nama, String noTiket) {
+        super(nama, noTiket);
+    }
+
+    @Override
+    public double hitungHargaTiket() {
+        return 100000;
+    }
+}
