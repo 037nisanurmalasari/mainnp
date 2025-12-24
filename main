@@ -1,0 +1,39 @@
+package mainp;
+import java.util.Scanner;
+
+/**
+ *
+ * @author ASUS
+ */
+public class Mainp extends InputPenumpang {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        new Mainp().jalankan();
+    }
+
+    void jalankan() {
+        System.out.print("Masukkan Nama Penumpang : ");
+        String nama = input.nextLine();
+
+        System.out.print("Masukkan No Tiket        : ");
+        String noTiket = input.nextLine();
+
+        System.out.print("Jenis Penumpang (1=Reguler, 2=VIP): ");
+        int pilihan = input.nextInt();
+
+        Penumpang p;
+
+        if (pilihan == 1) {
+            p = new PenumpangReguler(nama, noTiket);
+        } else {
+            p = new PenumpangVIP(nama, noTiket);
+        }
+
+        System.out.println("\n=== Data Penumpang ===");
+        p.tampilkanData("Terdaftar");
+    }
+}
